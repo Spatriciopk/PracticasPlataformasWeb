@@ -1,0 +1,35 @@
+<div class="container z-depth-5">
+    <h1>REGISTRAR UN NUEVO GASTO</h1>
+    <div class="col s12 m6">
+        <div class="col s12 m6">
+            <div class="col s12 m6">
+                <div class="col s12 m6">
+                    <form #gastoForm="ngForm" (ngSubmit)="addGasto(gastoForm)">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input type="text" name="tipo" #name="ngModel" [(ngModel)]="gastoService.selectedGasto.tipo"
+                                placeholder="Ingrese el tipo de gasto">
+                                </div>
+                                <div class="input-field col s12">
+                                <input type="text" name="ruc" #name="ngModel" [(ngModel)]="gastoService.selectedGasto.ruc" placeholder="Ingrese el ruc de empresa">
+                                </div>
+                                <div class="input-field col s12">
+                                <input type="text" name="empresa" #name="ngModel" [(ngModel)]="gastoService.selectedGasto.empresa" placeholder="Ingrese el nombre de empresa">
+                                </div>
+                                <div class="input-field col s12">
+                                <input type="text" name="monto" #name="ngModel" [(ngModel)]="gastoService.selectedGasto.monto"
+                                placeholder="Ingrese el monto del gasto">
+                            </div>
+                        </div>
+                        <div class="card-action">
+                            <div class="input-field col s12">
+                                <button class="waves-effect waves-light btn-large" >Grabar</button>
+                                <button class="waves-effect waves-light btn-large" (click)="resetForm(gastoForm)" >Borrar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+const gasto=require('../controllers/gastos.controller');
+const express=require('express');
+router=express.Router();
+router.get('/',gasto.getGastos);
+router.post('/', gasto.createGastos);
+router.get('/:id',gasto.getGasto);
+router.put('/:id',gasto.editGasto);
+router.delete('/:id', gasto.deleteGasto);
+router.get('/tipo/:tipo',gasto.getGastosTipo);
+module.exports=router;

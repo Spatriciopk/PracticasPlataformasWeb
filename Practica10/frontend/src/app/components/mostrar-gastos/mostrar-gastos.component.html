@@ -1,0 +1,30 @@
+<div class="container z-depth-5" >
+    <h1 align="center">GASTOS</h1>
+    <div class="col">
+        <table class="responsive-table" style="padding: 5;">
+            <thead>
+                <th>Tipo</th>
+                <th>RUC</th>
+                <th>Empresa</th>
+                <th>Monto</th>
+                <th>Acciones</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let gasto of gastoService.gastos">
+                    <td>{{gasto.tipo}}</td>
+                    <td>{{gasto.empresa}}</td>
+                    <td>{{gasto.ruc}}</td>
+                    <td>{{gasto.monto | currency}}</td>
+                    <td>
+                        <a (click)="editGasto(gasto)"> 
+                            <i class="medium material-icons" style="cursor: pointer;">assignment</i>
+                        </a>
+                        <a (click)="deleteGasto(gasto._id)"> 
+                            <i class="medium material-icons" style="cursor: pointer;">backspace</i>
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
